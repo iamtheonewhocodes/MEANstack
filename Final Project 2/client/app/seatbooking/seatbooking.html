@@ -1,0 +1,167 @@
+      
+<script>
+function paynow()
+{
+location.href = '/creditcard/';
+}
+
+
+var selectSeatId=" ";
+var allseatselect="";
+$(document).ready (function() {
+$('.seat').click(function(){
+    $(this).toggleClass('seatselect');
+    // alert($(this).attr('id') );
+    var seatid=$(this).attr('id');
+
+if( allseatselect.indexOf( seatid )== -1) {//i knew about a method in SQL called INSTR ( instring )searched for it came to know about indexOf
+ allseatselect= allseatselect+" "+seatid;}
+ else{
+   alert("Removing/Deselecting Seat"+"  "+seatid);
+   allseatselect=allseatselect.replace(seatid," ");
+}
+   alert( "Selected Seats are"+allseatselect);
+
+
+    this.SeatNo.push(seatid);
+    alert(SeatNo);
+  });
+});
+
+
+    </script>
+
+<div class="container">
+  <div class="display">
+    <div class="col-md-3" id="d1">
+
+    </div>
+
+  <div class="row" style="margin-top:10%">
+      <div class="col-md-12">
+        <table class="table">
+          <tr>Row 1
+                <td>
+                      <div id="A1" class="seat">A1</div>
+                    </td>
+                    <td>
+                      <div id="A2" class="seat">A2</div>
+                     </td>
+                     <td>
+                      <div id="A3" class="seat">A3</div>
+                    </td>
+                    <td>
+                      <div id="A4" class="seat">A4</div>
+                    </td>
+                    <td>
+                      <div id="A5" class="seat">A5</div>
+                    </td>
+                    <td>
+                    <div id="A6" class="seat">A6</div>
+                  </td>
+                  <td>
+                    <div id="A7" class="seat">A7<div>
+                    </td>
+                    <td>
+                      <div id="A8" class="seat">A8</div>
+                    </td>
+                    <td>
+                      <div id="A9" class="seat">A9</div>
+                    </td>
+                    <td>
+                      <div id="A10" class="seat">A10</div>
+                    </td>
+                    <td>
+                      <div id="A11" class="seat">A11</div>
+                    </td>
+                    <td>
+                      <div id="A12" class="seat">A12</div>
+                    </td>
+                    <!-- Row 2-->
+                    <div class="col-md-12">
+                      <table class="table">
+                        <tr>Row 2
+                              <td>
+                                    <div id="A13" class="seat">A13</div>
+                                  </td>
+                                  <td>
+                                    <div id="A14" class="seat">A14</div>
+                                   </td>
+                                   <td>
+                                    <div id="A15" class="seat">A15</div>
+                                  </td>
+                                  <td>
+                                    <div id="A16" class="seat">A16</div>
+                                  </td>
+                                  <td>
+                                    <div id="A17" class="seat">A17</div>
+                                  </td>
+                                  <td>
+                                  <div id="A18" class="seat">A18</div>
+                                </td>
+                                <td>
+                                  <div id="A19" class="seat">A19<div>
+                                  </td>
+                                  <td>
+                                    <div id="A20" class="seat">A20</div>
+                                  </td>
+                                  <td>
+                                    <div id="A21" class="seat">A21</div>
+                                  </td>
+                                  <td>
+                                    <div id="A22" class="seat">A22</div>
+                                  </td>
+                                  <td>
+                                    <div id="A23" class="seat">A23</div>
+                                  </td>
+                                  <td>
+                                    <div id="A24" class="seat">A24</div>
+                                  </td>
+                                </div>
+                                <div class="col-md-4">
+                                  <table class="table">
+                                    <tr>Row 3
+                                          <td>
+                                                <div id="A25" class="seat">A25</div>
+                                              </td>
+                                              <td>
+                                                <div id="A26" class="seat">A26</div>
+                                               </td>
+                                               <td>
+                                                <div id="A27" class="seat">A27</div>
+                                              </td>
+                                              <td>
+                                                <div id="A28" class="seat">A28</div>
+                                              </td>
+                                              <td>
+                                                <div id="A29" class="seat">A29</div>
+                                              </td>
+                                              <td>
+                                              <div id="A30" class="seat">A30</div>
+                                            </td>
+                                            <td>
+                                              <div id="A31" class="seat">A31<div>
+                                              </td>
+                                              <td>
+                                                <div id="A32" class="seat">A32</div>
+                                              </td>
+                                              <td>
+                                                <div id="A33" class="seat">A33</div>
+                                              </td>
+                                              <td>
+                                                <div id="A34" class="seat">A34</div>
+                                              </td>
+                                              <td>
+                                                <div id="A35" class="seat">A35</div>
+                                              </td>
+                                              <td>
+                                                <div id="A36" class="seat">A36</div>
+                                              </td>
+                                            </tr>
+                                            </div>
+                                          </div>
+
+                                          <tr>
+                                            <td>
+                                      <button type="button" class="btn btn-success" onclick="paynow()">Proceed to Payment</button></div></tr></td>
+                  <!-- <button>Remove the selected seats</button> -->

@@ -1,0 +1,15 @@
+<div class="col-md-3">
+  <label for="MovieN">Movie Name</label><br>
+  <select id="MovieN" ng-model="mappingCtrl.mymovie" > f ix the movie name
+    <option value="{{n.original_title}}" ng-repeat="n in mappingCtrl.MovieData">{{n.original_title}}</option>
+  </select>
+</div>
+
+
+
+<div class="col-md-3">
+    <label for="selectCity">City</label><br>
+    <select id="selectCity" ng-model="mappingCtrl.mycity" >
+      <option value="{{c.City}}" ng-repeat="c in mappingCtrl.awesomeThings">{{c.City}}</option>
+    </select>
+    </div>

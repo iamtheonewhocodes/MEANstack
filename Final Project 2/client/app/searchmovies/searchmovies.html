@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <input type="text" ng-model="searchmoviesCtrl.MovieName" class="form-control" placeholder="Movie Name">
+      </div>
+      <div class="form-group">
+        <input type="text" ng-model="searchmoviesCtrl.Year" class="form-control" placeholder="Movie Year">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success" ng-click="searchmoviesCtrl.findMovie()">Search Movie</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <tr>
+          <th>Poster</th>
+          <th>Movie Name</th>
+          <!-- <th>Genre</th> -->
+          <th>Duration</th>
+        </tr>
+        <tr>
+          <td><img src="https://image.tmdb.org/t/p/w500/{{searchmoviesCtrl.MovieData.poster_path}}" style="width:200px" alt=""></td>
+          <td>{{searchmoviesCtrl.MovieData.original_title}}</td>
+          <td><span ng-repeat="gen in searchmoviesCtrl.MovieData.genres">{{gen.name}},</span></td>
+          <td><button class="btn btn-primary" ng-click="searchmoviesCtrl.AddMovie()">Add Movie</button></td>
+        </tr>
+        <tr ng-repeat="m in searchmoviesCtrl.Movies">
+          <td><img src="https://image.tmdb.org/t/p/w500/{{m.poster_path}}" style="width:200px" alt=""></td>
+          <td>{{m.original_title}}</td>
+        <td>{{m.runtime}}</td>
+          <td><button class="btn btn-danger" ng-click="searchmoviesCtrl.deleteThing(m)">Delete</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

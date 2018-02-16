@@ -1,0 +1,52 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<style>
+	.container{
+	background-color: aliceblue;}
+	</style>
+
+	<script>
+	function cardnumber(inputtxt)
+{
+  var cardno = /^(?:5[1-5][0-9]{14})$/;
+  if(inputtxt.value.match(cardno))
+        {
+      return true;
+        }
+      else
+        {
+        alert("Not a valid Mastercard  Credenetials Please check your CVC number and card number!");
+        return false;
+        }
+}
+		</script>
+
+
+<div class="container">
+	<div class="col-xs-12 col-md-4">
+		<form name="form1" action="#">
+      <label>Card Number</label>
+<input type='text' name='text1' placeholder="Card Number"><br></br>
+
+<label> CvC number</label>
+			<input type="number" maxlength="3" minlength="3" placeholder="CVC number" required>
+
+
+	<div clas="col-md-4">
+
+
+<div class="row align-items-start">
+	<div class="Col-md-3">
+		<label>Expiry Date</label>
+		<input type="date" max="2018" min="2008"></input><br></br>
+		       <!-- add name and year to it-->
+					<label><input type="checkbox"> I agree to all Terms and Conditions</label>
+					<button type="submit" class="btn btn-success" onclick="cardnumber(document.form1.text1)">Pay Now</button></div>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="form-group">
+		</div></div>

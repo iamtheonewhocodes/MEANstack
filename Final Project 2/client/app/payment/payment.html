@@ -1,0 +1,59 @@
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<style>
+	.container{
+	background-color: aliceblue;}
+	</style>
+
+	<script>
+	function cardnumber(inputtxt)
+{
+  var cardno = /^(?:5[1-5][0-9]{14})$/;
+  if(inputtxt.value.match(cardno))
+        {
+      return true;
+        }
+      else
+        {
+        alert("Not a valid Mastercard  Credenetials Please check your CVC number and card number!");
+        return false;
+        }
+}
+		</script>
+
+
+	<div class="col-md-6">
+		<form name="form1" action="#">
+<input type='text' name='text1' placeholder="Card Number">
+			<input type="number" maxlength="3" minlength="3" placeholder="CVC number" required>
+<!--<p class="submit"><input type="submit" name="submit" value="Submit" onclick="cardnumber(document.form1.text1)"/></p>-->
+</form>
+
+	<div clas="col-md->">
+  <select>
+    <option>Jan</option>
+    <option>Feb</option>
+    <option>Mar</option>
+    <option>Apr</option>
+    <option>May</option>
+    <option>Jun</option>
+    <option>July</option>
+    <option>Aug</option>
+    <option>Sept<option>
+    <option>Oct</option>
+    <option>Nov</option>
+    <option>Dec</option>
+  </select>
+	</div>
+
+
+	<div class="Col-md-3">
+		<label>month</label>
+		<input type="date" max="2018" min="2008"></input>
+		       <!-- add name and year to it-->
+					<label><input type="checkbox"> I agree to all Terms and Conditions</label>
+					<button type="submit" class="btn btn-success" onclick="cardnumber(document.form1.text1)">Pay Now</button></div>
+
+  <div class="form-group">
+		</div></div> -->

@@ -1,0 +1,114 @@
+
+<style media="screen">
+  .top{width:100px;}
+  /*.styleRow{margin-left: 50px;
+  border:1px solid red;}*/
+  .dateTop{margin-top: 10%}
+  .showPicker{width:100Px;}
+</style>
+
+<script src="bower_components\jquery-ui\jquery-ui.js"></script>
+<script src="bower_components\jquery-ui\jquery-ui.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#mydate").datepicker({dateformat:'dd mm yy'});
+    $("#mydate").click(function(){
+        $rootscope = ($("#mydate").value());
+    });
+  });
+
+</script>
+
+<div class="container" >
+
+  <div class="row ">
+    <div class="col-md-3">
+      <label for="MovieN">Movie Name</label><br>
+      <select id="MovieN" ng-model="mappingCtrl.original_title" >
+        <option value="{{m.original_title}}"
+        ng-repeat="m in mappingCtrl.Movies | unique:'original_title' ">{{m.original_title}}
+        </option>
+      </select>
+    </div>
+
+
+
+
+    <div class="col-md-3">
+      <label for="TName">Theatre Name</label><br>
+      <select id="TName" ng-model="mappingCtrl.TheatreName" >
+        <option value="{{t.TheatreName}}" ng-repeat="t in mappingCtrl.awesomeThings | filter:{'TheatreLocation':mappingCtrl.TheatreLocation}">{{t.TheatreName}}</option>
+      </select>
+      </div>
+
+      <div class="col-md-3">
+        <label for="TName">Theatre Location</label><br>
+        <select id="TName" ng-model="mappingCtrl.TheatreLocation" >
+          <option value="{{t.TheatreLocation}}" ng-repeat="t in mappingCtrl.awesomeThings |filter:{'city':mappingCtrl.city}">{{t.TheatreLocation}}</option>
+        </select>
+        </div>
+
+      <div class="col-md-3">
+        <label for="selectCity">City</label><br>
+        <select id="selectCity" ng-model="mappingCtrl.city" >
+          <option value="{{c.city}}" ng-repeat="c in mappingCtrl.awesomeThings">{{c.city}}</option>
+        </select>
+        </div>
+
+
+
+  </div> <!--end of container -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 pull-right dateTop" style="border:0px solid red;">
+        <div class="showdate">
+            <input type="text" class="form-control showPicker" id ="mydate" placeholder="Show Date" ng-model="mappingCtrl.mydate">
+        </div>
+      </div>
+
+        <div class="col-md-2 pull-right dateTop" style="border:0px solid red;">
+          <div class="showtime">
+              <input type="text" class="form-control showPicker" placeholder="Show Time" ng-model="mappingCtrl.time">
+          </div>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <div class="container">
+
+
+  <div class="col-md-12 text-right" style="border:0px solid red;">
+    <div class="showdate">
+      <button type="button" class= "btn btn-success" name="button" style="width:100px;margin-top:20px; padding-right:20px" ng-click="mappingCtrl.AddMapping()"> Add</button>
+    </div>
+</div>
+      </div>
+      <div class="">
+        <table class="table">
+          <tr>
+            <th>name</th>
+
+            <th>city</th>
+            <th>theatre</th>
+            <th>theatre location</th>
+            <th>time</th>
+            <th>date</th>
+          </tr>
+          <tr ng-repeat="t in mappingCtrl.mapping">
+            <td>{{t.original_title}}</td>
+            <td>{{t.city}}</td>
+            <td>{{t.TheatreName}}</td>
+              <td>{{t.TheatreLocation}}</td>
+            <td>{{t.time}}</td>
+            <td>{{t.mydate}}</td>
+            <td><button class="btn btn-danger" ng-click="mappingCtrl.deleteThing(t)">Delete</button></td>
+          </tr>
+        </table>
+
+
+      </div>

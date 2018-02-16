@@ -1,0 +1,84 @@
+<script>
+function moveto()
+{
+location.href = '/seatbooking/';
+}
+
+var selectSeatId=" ";
+var allseatselect="";
+$(document).ready (function() {
+$('.seat').click(function(){
+    $(this).toggleClass('seatselect');
+    // alert($(this).attr('id') );
+    var seatid=$(this).attr('id');
+
+if( allseatselect.indexOf( seatid )== -1) {//i knew about a method in SQL called INSTR ( instring )searched for it came to know about indexOf
+ allseatselect= allseatselect+" "+seatid;}
+ else{
+   alert("Removing/Deselecting Seat"+"  "+seatid);
+   allseatselect=allseatselect.replace(seatid," ");
+}
+   alert( "Selected Seats are"+allseatselect);
+
+
+    this.SeatNo.push(seatid);
+    alert(SeatNo);
+  });
+});
+
+
+    </script>
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12">
+<div class="col-md-2">
+  <label for="MName">Movie Name</label><br>
+  <select id="MName" ng-model="userCtrl.original_title" > <!--booking endpoint model has original_title-->
+    <option value="{{m.original_title}}"
+    ng-repeat="m in userCtrl.mapping">{{m.original_title}}</option><!--mapping has original_title-->
+  </select>
+</div>
+<div class="col-md-2">
+  <label for="TName">Theatre Name</label><br>
+  <select id="TName" ng-model="userCtrl.TheatreName" >
+    <option value="{{t.TheatreName}}" ng-repeat="t in userCtrl.mapping | filter:{'TheatreLocation':mappingCtrl.TheatreLocation}">{{t.TheatreName}}</option>
+  </select>
+  </div>
+
+  <div class="col-md-2">
+    <label for="TName">Theatre Location</label><br>
+    <select id="TName" ng-model="userCtrl.TheatreLocation" >
+      <option value="{{t.TheatreLocation}}" ng-repeat="t in userCtrl.mapping | filter:{'city':mappingCtrl.city}">{{t.TheatreLocation}}</option>
+    </select>
+    </div>
+
+  <div class="col-md-2">
+    <label for="selectCity">City</label><br>
+    <select id="selectCity" ng-model="userCtrl.city" >
+      <option value="{{c.city}}" ng-repeat="c in userCtrl.mapping">{{c.city}}</option>
+    </select>
+    </div>
+</div>
+<div class="col-md-2">
+  <label for="selectCity">Time</label><br>
+  <select id="selectCity" ng-model="userCtrl.time" >
+    <option value="{{c.time}}" ng-repeat="c in userCtrl.mapping">{{c.time}}</option>
+  </select>
+</div>
+<div class="col-md-2">
+  <label for="selectCity">Date</label><br>
+  <select id="selectCity" ng-model="userCtrl.mydate" >
+    <option value="{{c.mydate}}" ng-repeat="c in userCtrl.mapping">{{c.mydate}}</option>
+  </select>
+  </div>
+</div>
+
+</div>
+</div>
+
+<button type="button" class="btn btn-primary active" onclick="moveto()">Book your seats</button>
+
+</div>
+</div>
